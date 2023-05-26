@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :weather_data
+  resources :songs
+  resources :icons
+  resources :images
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # Geolocation
+  get '/geolocation', to: 'sessions#index'
+  post '/weather_report', to: 'weather_report#create'
+   
 end
